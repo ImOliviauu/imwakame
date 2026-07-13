@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alkaline Wakame</title>
+    <link>https://imwakame.netlify.app/</link>
+    <description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=280 height=110 src=&#34;//music.163.com/outchain/player?type=4&amp;id=1494847043&amp;auto=1&amp;height=90&#34;&gt;&lt;/iframe&gt;</description>
+    <language>zh-cn</language>
+    <generator>Gridea Pro</generator>
+    <lastBuildDate>Mon, 13 Jul 2026 16:40:47 +0800</lastBuildDate>
+    <atom:link href="https://imwakame.netlify.app/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <item>
+      <title>博客主题自定义</title>
+      <link>https://imwakame.netlify.app/post/07092026-02/</link>
+      <guid isPermaLink="true">https://imwakame.netlify.app/post/07092026-02/</guid>
+      <pubDate>Thu, 09 Jul 2026 23:46:41 +0800</pubDate>
+      <description><![CDATA[<p>博主在 simple 主题给定的自定义范畴之外的一些修改。</p>
+<!-- more -->
+<h2 id="heading">完整头图</h2>
+<p>博主写影评通常会将海报（通常是竖版的）作为文章头图（也就是封面），但是 simple 会默认把头图截成 16:9 的。如果想要将头图能完整且自适应大小（不留白边），可以做以下修改。</p>
+<h3 id="1--postejs">1. 修改 post.ejs</h3>
+<p><code>\simple\templates\post.ejs</code><br />
+找到：</p>
+<pre><code class="language-ejs">&lt;% if (post.feature) { %&gt;
+  &lt;div class=&quot;feature-container&quot; style=&quot;background-image: url('&lt;%= post.feature %&gt;')&quot;&gt;
+  &lt;/div&gt;
+&lt;% } %&gt;
+</code></pre>
+<p>替换成：</p>
+<pre><code class="language-ejs">&lt;% if (post.feature) { %&gt;
+  &lt;div class=&quot;feature-container&quot;&gt;
+    &lt;img src=&quot;&lt;%= post.feature %&gt;&quot;&gt;
+  &lt;/div&gt;
+&lt;% } %&gt;
+</code></pre>
+<h3 id="2--maincss">2. 修改 main.css</h3>
+<p><code>\simple\assets\styles\main.css</code><br />
+找到：</p>
+<pre><code class="language-css">.post-detail .feature-container {
+  padding-top: 56.25%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 25, 0.1), 0 5px 75px 1px rgba(0, 0, 50, 0.2);
+  margin-bottom: 24px;
+}
+</code></pre>
+<p>替换成：</p>
+<pre><code class="language-css">.post-detail .feature-container {
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 25, 0.1), 0 5px 75px 1px rgba(0, 0, 50, 0.2);
+}
+.post-detail .feature-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</code></pre>
+<h2 id="heading-1">添加评论</h2>
+<p>pro 支持了 cusdis ，搞起来简单一点<br />
+这个跟着官方文档走就可以，如果你的主题没有显示评论框，就复制一下官网给的那一段 html 家在 <code>post.ejs</code> 正文部分后面，如果发现评论框很矮，在 style 的 <code>main.css</code> 里加入：</p>
+<pre><code class="language-css">#cusdis_thread {
+  width: 100%;
+  min-height: 400px;
+}
+#cusdis_thread iframe {
+  width: 100% !important;
+  min-height: 400px !important;
+  border: none;
+}
+</code></pre>
+]]></description>
+      <category>Design</category>
+      <category>Gridea</category>
+    </item>
+    <item>
+      <title>A Home at the End of the World: It&#39;s just love, man. It&#39;s nothing to fear.</title>
+      <link>https://imwakame.netlify.app/post/07132026-01/</link>
+      <guid isPermaLink="true">https://imwakame.netlify.app/post/07132026-01/</guid>
+      <pubDate>Mon, 13 Jul 2026 22:15:41 +0800</pubDate>
+      <description><![CDATA[<p>影评：A Home at the End of the World (2004)</p>
+<!-- more -->
+<blockquote>
+<p>Man, like, this whole big, beautiful, noisy world&hellip;<br />
+&hellip;and everything that can happen.</p>
+</blockquote>
+<h3 id="heading">说在前面</h3>
+<p>同步更新在豆瓣和知乎。<br />
+欢迎博客内阅读：imwakame.netlify.app/post/07132026-01/</p>
+<p>这部电影改编自同名小说。其实电影在表达和编排上其实略差火候，但是我认为原作的内涵足够好，使得就算我很难在技术层面给它打很高的分，也不能阻止我对本片的欣赏与喜爱。本片常常被囊括进“同影”的范畴，但我不这么认为，同性只是这部电影想表达的，纷繁的“爱”的一种。本片的 OST 收录了很具有 1970s 末到 1980s 特点的音乐，包括民谣摇滚，新浪潮和合成器，蓝眼灵魂乐等，以现在的审美去听可能略显陈旧，但强烈的时代气息，很好地契合了电影。<a href="https://music.163.com/album?id=126742&amp;uct2=U2FsdGVkX1+CA4LD5gp5vrDUvRSaUPh6taPejE8mOU8=">A Home at the End of the World (Music from the Motion Picture) - 网易云音乐</a><br />
+同时感谢这部电影的契机让我分清楚了 Colin Farrell, Colin Firth 和 Will Ferrell.<br />
+但是我还没来得及读书，所以我单单讨论电影。</p>
+<p>另：特别地，下文“爱情”指情侣之间的恋爱情感，“爱”指广义的人与人之间美好的情感。</p>
+<h3 id="heading-1">说在中间</h3>
+<p>IMDb:6.6/10 (14k)<br />
+Letterboxd:3.3/5 (30)<br />
+豆瓣：7.8/10 (2249)<br />
+Metascore: 59（某些给 supergirl 打高分的杂志和 club 我就不说了啊）<br />
+个人评分：7.3/10 （终于是否认了一下 metascore）</p>
+<p>“家”是串起整部电影的线索。年幼的 Bobby 失去了自己的家，又在 Jonathan 家里住下，成为这个家庭的一部分；后来，Bobby、Jonathan 和 Clare 又组建了一个非常规的家庭，他们甚至开了一家名字叫“Home”的餐厅；最后，这个家里又只剩下两个人，或者很快就只剩下一个人。</p>
+<p><img src="https://imwakame.netlify.app/post-images/1783929759133257900_0.png" alt="" /></p>
+<p>&ldquo;It&rsquo;s just love, man. It&rsquo;s nothing to fear.&rdquo; 是电影开头 Bobby 的哥哥 Carlton 对 9 岁的 Bobby 说的话。Carlton 因为服用致幻剂（或者喝醉），又在天黑时没有注意到院子的玻璃门已经关上，撞碎玻璃门后意外死亡。这是全剧唯一一个如此荒诞而疯狂的死亡，也是 Bobby 第一次真正感受到“失去家”的节点。（大家被扎伤之后不要乱拔开！）<br />
+。<br />
+<img src="https://imwakame.netlify.app/post-images/1783929380137745800_0.png" alt="" /></p>
+<p>Bobby 从小时候开始接触大麻，也怂恿 Jonathan，甚至他的母亲 Alice 一起尝试。这似乎在表现，在哥哥 Carlton 的影响下，Bobby 或许继承了一种自由、不羁，甚至带有嬉皮士色彩的气质。他留着长发，看起来像一个永远不会被社会规则束缚的人。但有趣的是，Bobby 本身其实并不像表面上那么主动。直到爱上 Clare 之前，他始终保持着处子之身。<br />
+<img src="https://imwakame.netlify.app/post-images/1783930131445477200_0.png" alt="" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783929943740184600_0.png" alt="" /></p>
+<p>少年时期的 Jonathan 戴着牙套和眼镜，看起来有些木讷，后来进入纽约大学，成为一个更加符合社会期待的城市青年。但在两人的关系中，一直是 Jonathan 更主动的一方。无论是在少年时期主动靠近 Bobby，还是成年后更加坦然地面对自己的性取向，纹了纹身，Jonathan 都代表着一种更主动、更开放的状态。虽然艾滋并不等同于滥情，但在那个防护意识和社会认知都尚未完善的年代，它某种程度上也映射出 Jonathan 对性与亲密关系更为自由的态度。反而是成年后的 Bobby，看似更加叛逆，却成为三个人中更加单纯、更少被欲望推动的那个人，他似乎可以在所有的环境中生存，正如 Clare 所说：&ldquo;I bet you could live in the Sahara.&rdquo;<br />
+<img src="https://imwakame.netlify.app/post-images/1783930078570030500_0.png" alt="" /></p>
+<p>Clare 则代表了另一种寻找家的方式。她曾经与一个暴力狂结婚并离婚，有着明显的 80s punk 气质。事实上，大部分 punk 并不能做到 Sid Vicious 那般疯狂，他们更多时候是在反抗旧有的生活方式，呼喊爱与和平，但与此同时，他们自己也常常找不到稳定的归属。Clare 看似是三个人中最自由的人，但她其实也是最渴望拥有一个家的人。她想创造一种不同于传统婚姻的家庭形式，但最终发现，即使家庭的形式可以被重新定义，人与人之间的情感倾向却无法被设计。<br />
+<img src="https://imwakame.netlify.app/post-images/1783930841082279200_0.png" alt="" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783930932135245100_0.png" alt="" /></p>
+<p>Jonathan 父亲去世后，三个人回去探望 Alice，这一段让我印象非常深刻。在那一段中，Jonathan 带着愤怒对 Bobby 说：如果你想要他的母亲，那他就给你。一直以来，所有人似乎都被 Bobby 吸引——Alice、Clare，甚至 Jonathan 自己。<br />
+<img src="https://imwakame.netlify.app/post-images/1783930325800873800_0.png" alt="" /></p>
+<p>也是在这里，我意识到 Bobby 的特别之处：他似乎很少主动索取什么，却总能让别人把自己的欲望投射到他身上。Alice 在他身上看到了一种失去的青春和自由；Jonathan 在他身上看到了一种自己无法拥有的生命力；Clare 则在他身上看到了一种组建家庭的可能性。Bobby 像一个容器，承载着每个人对于理想生活的想象。而这种魅力，大概正是他在不断失去之后，依然能够保持安宁的原因。<br />
+<img src="https://imwakame.netlify.app/post-images/1783930280065725600_0.png" alt="" /></p>
+<p>Jonathan、Bobby、Clare，他们精神上都互相爱着对方，至少曾经爱着对方，但他们的爱并不相同，程度也不同，追求也不同。所以最后，当 Clare 问 Bobby：“Bobby. Do you wanna come with us?” Bobby 说：“No.” 这个选择其实非常复杂。Bobby 认为自己和 Jonathan 的感情只是少年时期的不懂事，但他仍然说着：“A little kiss between brothers.” 这句话既像是一种否认，也像是一种承认。他试图把那段关系归类为少年时代的亲密，却无法否认 Jonathan 在他生命中的特殊位置。这也是电影最残酷、也最温柔的地方：他们三个人确实曾经组成过一个家庭，但这个家庭并不是建立在完全平等的爱上。有人爱得更多，有人需要得更多，有人只是想找到一个不会再次失去的地方。<br />
+<img src="https://imwakame.netlify.app/post-images/1783930430964756500_0.png" alt="" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783930667077332100_0.png" alt="" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783930475701527900_0.png" alt="" /></p>
+<p>而 Bobby 最终留下来的，也许并不只是同性之间的爱情，而是他人生中最接近“家”的东西。正如他回答 Clare 所说:&ldquo;I couldn&rsquo;t be alone.&ldquo;他们把 Jonathan 父亲的骨灰洒在了山坡上。影片最后，又回到了那个 Bobby 曾经和哥哥一起服用致幻剂的地方，只是这一次，陪伴他的是 Jonathan。也许 Jonathan 早就在他们复杂的情感关系中，成为了 Bobby 的哥哥——那个曾经告诉他“这只是爱，没有什么好害怕”的人。他们最终停留在了那个属于自己的，a home at the end of the world。<br />
+<img src="https://imwakame.netlify.app/post-images/1783930595849868800_0.png" alt="" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783930767067015300_0.png" alt="" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783930599427701400_0.png" alt="" /></p>
+<p>什么支撑起一个家？是爱情吗？<br />
+我第一次听到一个不同的答案，是特殊受害者中的一集。一对形婚夫妻，他们彼此知道对方真实的取向，但仍然选择维持这段关系，因为支撑他们的并不是爱情，而是亲情、信任和陪伴。在这个世界上，并不是所有人都经历爱情，也不是所有人都追求爱情。电影描绘了最终散架的三人关系，但不可否认的是，这段关系也曾经成功过，而现实中，也或许真的有这样的关系成功过。他们曾经互相给予彼此需要的东西，也曾经共同创造过一个真正意义上的家。</p>
+<h3 id="heading-2">说在后面</h3>
+<p>Colin Farrell 真的是越看越帅，之前看 Fantastic Beasts 和 Phone Booth 的时候都没有特别印象深刻，看的时候，虽然确实觉得留长头发像野人，但是没料到剪短发之后能这么帅萌sss。（真的很帅很萌吧↓）<br />
+<img src="https://imwakame.netlify.app/post-images/1783929620537334700_0.jpg" alt="" /><br />
+我真没觉得哥们儿演技差，他采访里都是话很多有点多动，而且性格也比较放浪，个子也不高，演出来真的憨憨壮壮的。<br />
+说来有趣，这部电影是我问 Chatgpt 推荐和 Shelter 质感很像的电影时 Chat 的回答。可能相似点只有文艺范和含有同性元素吧……情感上和背景差别都挺大的，但是很高兴我看了，因为这着实不错。<br />
+不可否认的是原作的目录表明这个作者把这四个人的 POV 都写了，但是电影弱化了另外两个人，主要讲了 Bobby，有些地方的逻辑也不够清晰，但好在最终呈现的效果还不错，毕竟这个电影时长还是挺短的。<br />
+这部电影写起来还挺难的，构思了很久，已经到达不想写的边缘了，还是决定无脑冲一下，所以写得东西可能乱乱的致歉。谢谢收看！</p>
+]]></description>
+      <category>Review</category>
+    </item>
+    <item>
+      <title>Shelter：千禧年加州小镇有关冲浪的爱情</title>
+      <link>https://imwakame.netlify.app/post/07092026-01/</link>
+      <guid isPermaLink="true">https://imwakame.netlify.app/post/07092026-01/</guid>
+      <pubDate>Wed, 08 Jul 2026 21:26:34 +0800</pubDate>
+      <description><![CDATA[<p>影评：Shelter (2007)</p>
+<!-- more -->
+<blockquote>
+<p>滑板，冲浪，街头涂鸦，飞盘<br />
+黑白海报，沙发，爆米花，电视<br />
+黄色墙面，高压电塔，海滩，落日<br />
+小手机，画册本，对讲机，方盒子笔记本电脑<br />
+$7.99的拖鞋，奶酪通心粉，热狗，巧克力脆煎饼</p>
+</blockquote>
+<hr />
+<h3 id="heading">说在最前面：</h3>
+<p>久违的长评。<br />
+欢迎来我的博客阅读：https://imwakame.netlify.app/post/07092026-01/<br />
+同步发表在豆瓣和知乎！</p>
+<p>在阅片量逐渐增长的时间里，我逐渐确定了原声音乐对整部电影质量的影响，从 Notting Hill 到 Her ，到 The Secret Life of Walter Mitty ，甚至是我不那么喜欢的 Call Me By Your Name ，OST 都是这些电影的一大亮点，甚至潜在地拔高了电影的水平，同时，作为一张有鲜明主题的音乐专辑，也可圈可点。Shelter 也许不算一部多有知名度的作品，但是我个人很喜欢它的 OST，所以有兴趣的朋友请听一听。自鉴定风格：Indie Rock, Indie Folk。<a href="https://music.163.com/album?id=500814&amp;uct2=U2FsdGVkX1/HQErf8ga/PXMylpWQSiOawuVE7nGHr5I=">Shelter (Music from the Original Film) - 网易云音乐</a></p>
+<hr />
+<h3 id="heading-1">说在中间：</h3>
+<p>个人评分：8.8/10<br />
+IMDb：7.6/10，豆瓣：8.1/10<br />
+这部电影在豆瓣上以运动电影的名义上了榜，同时以我自己的观感来说，它确实花了不少镜头拍摄冲浪和滑板。</p>
+<p>饱受诟病、故弄玄虚的译名：《欲盖弄潮》。我会倾向于直译。当然似乎也有人觉得这个译名很好，但是他们常常给电影打了低分（意味深长……）。</p>
+<p>看这部电影的契机是在 B 站主页刷到了，但其实我已经积压了不少同影没有看，包括著名的 God&rsquo;s Own Country 。不过这部电影的片头一下吸引了我，从配乐，到色调，再到那种清新的生活氛围，以及滑板：一个对我来说总带着强烈向前感的元素。</p>
+<p><strong>注意：博主的截图能力有限，原片比截的好看很多，一定要去看看！！</strong></p>
+<p><img src="https://imwakame.netlify.app/post-images/1783527673369.png" alt="" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783526507487.png" alt="这一幕超喜欢" /></p>
+<p>看了The Celluloid Closet 之后，我对有好结局的（非女性向）同影有了超强好感。（给没看过的朋友解释一下，就是曾经（男）同性恋总是作为丑角或者悲情角色出现在影视作品里，这本身也是一种对同性恋的不包容认知：认为这些爱情注定不会有好结局。而喜剧结尾，是同影在好莱坞影视发展中的一大进步。至于 Yaoi 这些事情，我不多评价。）</p>
+<p>我觉得这部同影特别的地方在于，它承认了“成为同性恋”本身，并不是男主 Zach 最大的忧虑。相反，他身边的人其实很快接受了这一点，甚至连 Jeanne 也没有过多纠缠“你是同性恋怎么办”。（虽然她觉得 Shaun 不是一个好人，其中确实可能有恐同因素，但她对于 Zach 的纠缠更多来自于“你抛下了我”和“你不能帮我照顾 Cody”，而不是单纯针对他的性取向。）全片真正具有明显贬义的同性恋相关词汇也只有 fag 这种常用俚语，所以恐同焦虑在影片中其实非常淡。而且，不管是曾经拒绝 Cal Art 的 offer，还是后来面对和 Shaun 关系时的犹豫，Zach 更多在意的是 Jeanne 怎么办、Cody 怎么办，而不是“我是同性恋怎么办”。这也是我觉得影片比较成熟的地方：它没有把同性恋身份本身作为全部冲突，而是把 Zach 放回一个普通年轻人的生活中，让他的选择、责任和感情成为真正的问题。</p>
+<p>淡淡的忧郁充斥了整部电影。它来自于不负责任又充满麻烦的姐姐（虽然我有幸福的家庭，但我总有朋友身处这样的环境，所以对不负责的人感到不喜），也来自于贫富差距（这一点在很多地方都有体现：对话、居住环境以及更多细节，如此来说，Gabe 和 Zach 的友情才令人羡慕……）。<br />
+<img src="https://imwakame.netlify.app/post-images/1783526722294.png" alt="" /><br />
+还有他们曾经一起连线用的对讲机，现在用来找真爱了哈哈。他们结尾用对讲机讲话真的超级可爱。<br />
+<img src="https://imwakame.netlify.app/post-images/1783526791509.png" alt="" /></p>
+<p>这种忧郁其实也很符合千禧年前后的青年气质：一种对于未来的不确定、对于自我身份的迷茫，以及明明渴望自由却又被现实拖住的感觉。那几年美国青年文化里也充斥着类似情绪，从 Midwest emo 那种带有孤独感、内省感的吉他音乐，到后来进入主流的 emo pop（这里不说 emo rock 是因为 emo rock 更宣泄一点，而 emo pop 和本片的情绪表达都更加内敛），都在表达一种“我不知道未来在哪里，但我确实正在经历一些无法忽视的情绪”的状态。 这种情绪并不完全是悲伤，更像是一种带着青春滤镜的失落——夏天。另外，彼时的独立音乐，也常常有夏天的感觉。<br />
+<img src="https://imwakame.netlify.app/post-images/1783527008871.png" alt="这张很萌" /></p>
+<p>值得一提的是，影片中 Zach 的绘画确实有自己的风格，大概是粗轮廓线，以及黑、白、橙色色块和粗线条的组合，很符合我的审美。与很多影片惯用的手法类似，在两人情感逐渐发展的过程中，Zach 在一面墙上逐渐完成了一个浪花的涂鸦，到最后因为陷入悲伤，涂鸦又被涂掉。有时候就会有这种感觉：明明觉得自己已经准备放弃了，但是还是想留下某一点残余作为纪念；然而当发现这点残余也正在被抹除的时候，又会突然产生一种“不想就这样结束”的冲动。<br />
+<img src="https://imwakame.netlify.app/post-images/1783527466771.png" alt="Sad Cody" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783526271072.png" alt="" /></p>
+<p>Tori 在影片中戏份不多，但她实际上相当于 Zach 在两边都不知道该如何面对时的一个庇护（yes，也是庇护！），但本身是一个很清醒很温柔的可爱女孩。Hi, monkey!<br />
+<img src="https://imwakame.netlify.app/post-images/1783526346079.png" alt="美~" /></p>
+<p>总之，这部电影其实已经超过了单纯探讨同性恋的故事。它真正的看点更多在于氛围和情绪——或者夏天。电影里有很多海滩背景的远景，有一种近乎梦幻的感觉。那些蓝色的天空、海浪、滑板和阳光，让整部电影像是一段已经结束的青春回忆。也正因为它并不刻意强调“同性恋”这个标签，所以最后留下来的反而是一种更加有灵魂的感动。</p>
+<p><img src="https://imwakame.netlify.app/post-images/1783527120153.png" alt="沙滩飞盘" /><br />
+<img src="https://imwakame.netlify.app/post-images/1783527286736.png" alt="和Tori拥抱" /></p>
+<p>最后，一家三口（狗太难截了先丢了）<br />
+<img src="https://imwakame.netlify.app/post-images/1783527560732.png" alt="" /></p>
+<hr />
+<h3 id="heading-2">说在最后面：</h3>
+<p>说一些比较情绪化的和发散的东西。<br />
+最近听了 Age Factory 的 CLOSE EYE （这张专辑很不错，推荐去听一听），对列举名词印象深刻，于是就用在这里了。这是我第一次很富含情感地写长影评，我觉得很不一样，或许我以后会像 Shaun 一样对着自己以前写的东西感叹：这是我写的破玩意吗？但是这仍然很有趣。<br />
+这个海报很典啊哈哈，都是这种风格。<br />
+Zach 的演员长得有一点点像 Dylan O&rsquo;brian ，也是我觉得长得很可爱很乐观的一位。<br />
+这真的是一部很温馨的电影，也有关孩子。有时候看这样的电影心里暖暖的，相似电影推荐：What Maisie Knew （关于继父，继母和我过上了快乐的生活）。<br />
+其实博主也有想对比本片和自己看过的其他同影，不过这样偏见可能有点大，就不说了。<br />
+有时候真的会想，文青男怎么都是同性恋呢（不恐同，我是 ally！）之前沉迷室内改造的时候也在 ytb 刷到过一个人的视频，点进主页发现也是一位同性恋，但是他品味感觉真的很好，ID 是 Robertgigs，他男朋友摄影也好厉害。当然第一句只是玩笑话。<br />
+其实博主也想当文青，这个电影除了没钱的那部分，简直算梦中生活，daydreaming&hellip;</p>
+]]></description>
+      <category>Review</category>
+      <enclosure url="https://imwakame.netlify.app/post-images/07092026-01.png" length="0" type="image/png"></enclosure>
+    </item>
+  </channel>
+</rss>

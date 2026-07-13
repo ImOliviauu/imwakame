@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<meta name="generator" content="Gridea Pro 1.2.2">
+<title>博客主题自定义 | Alkaline Wakame</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="/favicon.ico?v=1783932180">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="Design,Gridea" />
+  <meta name="description" content="博主在 simple 主题给定的自定义范畴之外的一些修改。">
+<meta name="keywords" content="OI,电影,音乐">
+<link rel="canonical" href="https://imwakame.netlify.app/post/07092026-02/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"博客主题自定义","url":"https://imwakame.netlify.app/post/07092026-02/","description":"博主在 simple 主题给定的自定义范畴之外的一些修改。","datePublished":"2026-07-09T23:46:41+08:00","dateModified":"2026-07-13T16:40:47+08:00","author":{"@type":"Person","name":"Alkaline Wakame"},"publisher":{"@type":"Organization","name":"Alkaline Wakame"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://imwakame.netlify.app","name":"Alkaline Wakame","position":1},{"@type":"ListItem","item":"https://imwakame.netlify.app/post/07092026-02/","name":"博客主题自定义","position":2}]}</script>
+<meta property="og:title" content="博客主题自定义">
+<meta property="og:description" content="博主在 simple 主题给定的自定义范畴之外的一些修改。">
+<meta property="og:url" content="https://imwakame.netlify.app/post/07092026-02/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alkaline Wakame">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://imwakame.netlify.app/post/07092026-02/">
+<meta name="twitter:title" content="博客主题自定义">
+<meta name="twitter:description" content="博主在 simple 主题给定的自定义范畴之外的一些修改。">
+</head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="/">
+        <img src="/images/avatar.png?v=1783932180" class="site-logo">
+        <h1 class="site-title">Alkaline Wakame</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            Tags
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/uu-65-59-43" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110 src="//music.163.com/outchain/player?type=4&id=1494847043&auto=1&height=90"></iframe>
+    </div>
+    <div class="site-footer">
+      Powered by Gridea Pro | <a class="rss" href="/feed.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">博客主题自定义</h2>
+            <div class="post-date">2026-07-09</div>
+            
+            <div class="post-content" v-pre>
+              <p>博主在 simple 主题给定的自定义范畴之外的一些修改。</p>
+<!-- more -->
+<h2 id="heading">完整头图</h2>
+<p>博主写影评通常会将海报（通常是竖版的）作为文章头图（也就是封面），但是 simple 会默认把头图截成 16:9 的。如果想要将头图能完整且自适应大小（不留白边），可以做以下修改。</p>
+<h3 id="1--postejs">1. 修改 post.ejs</h3>
+<p><code>\simple\templates\post.ejs</code><br />
+找到：</p>
+<pre><code class="language-ejs">&lt;% if (post.feature) { %&gt;
+  &lt;div class=&quot;feature-container&quot; style=&quot;background-image: url('&lt;%= post.feature %&gt;')&quot;&gt;
+  &lt;/div&gt;
+&lt;% } %&gt;
+</code></pre>
+<p>替换成：</p>
+<pre><code class="language-ejs">&lt;% if (post.feature) { %&gt;
+  &lt;div class=&quot;feature-container&quot;&gt;
+    &lt;img src=&quot;&lt;%= post.feature %&gt;&quot;&gt;
+  &lt;/div&gt;
+&lt;% } %&gt;
+</code></pre>
+<h3 id="2--maincss">2. 修改 main.css</h3>
+<p><code>\simple\assets\styles\main.css</code><br />
+找到：</p>
+<pre><code class="language-css">.post-detail .feature-container {
+  padding-top: 56.25%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 25, 0.1), 0 5px 75px 1px rgba(0, 0, 50, 0.2);
+  margin-bottom: 24px;
+}
+</code></pre>
+<p>替换成：</p>
+<pre><code class="language-css">.post-detail .feature-container {
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 25, 0.1), 0 5px 75px 1px rgba(0, 0, 50, 0.2);
+}
+.post-detail .feature-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</code></pre>
+<h2 id="heading-1">添加评论</h2>
+<p>pro 支持了 cusdis ，搞起来简单一点<br />
+这个跟着官方文档走就可以，如果你的主题没有显示评论框，就复制一下官网给的那一段 html 家在 <code>post.ejs</code> 正文部分后面，如果发现评论框很矮，在 style 的 <code>main.css</code> 里加入：</p>
+<pre><code class="language-css">#cusdis_thread {
+  width: 100%;
+  min-height: 400px;
+}
+#cusdis_thread iframe {
+  width: 100% !important;
+  min-height: 400px !important;
+  border: none;
+}
+</code></pre>
+
+            </div>
+
+            
+              <div class="tag-container">
+                
+                  <a href="/tag/design/" class="tag">
+                    Design
+                  </a>
+                
+                  <a href="/tag/gridea/" class="tag">
+                    Gridea
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="/post/07132026-01/">
+                  <h3 class="post-title">
+                    A Home at the End of the World: It&#39;s just love, man. It&#39;s nothing to fear.
+                  </h3>
+                </a>
+              </div>
+            
+            
+            <div id="cusdis_thread"
+              data-host="https://cusdis.com"
+              data-app-id="b1e9cd02-a4a1-428f-ad5d-a17fc91ba5ab"
+              data-page-id="/post/07092026-02/"
+              data-page-url="/post/07092026-02/"
+              data-page-title="博客主题自定义">
+            </div>
+
+            <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+            
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+
+  
+
+
+
+
+  <script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: simple v1.1.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+</body>
+</html>
